@@ -1,0 +1,1 @@
+﻿Select amount from dbo.saving order by date asc

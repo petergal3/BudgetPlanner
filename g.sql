@@ -1,0 +1,3 @@
+﻿ with saving_s as (select sum (amount) as s ,s.date as d from dbo.saving s group by s.date ), transactions_s as ( (select
+                sum(amount) as t1 ,t.date as d from dbo.transactions t where type = 'income' group by t.date)) select 
+                case when (select t0.t1 from transactions_s t0 where t0.d = (SELECT  TOP 1 t1.d   FROM transactions_s t1  where t1.d<s.d and t1.d is not null    ORDER BY t1.d desc)) is null and t.d is null then 0 when t.d is null then  (select t0.t1 from transactions_s t0 where t0.d = (SELECT    TOP 1 t1.d    FROM transactions_s t1   where t1.d<s.d and t1.d is not null  ORDER BY t1.d desc)) else t.t1 end as in_amount  from transactions_s t full outer join saving_s s on s.d = t.d 
