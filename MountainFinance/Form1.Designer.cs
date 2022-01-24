@@ -1563,11 +1563,11 @@
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelControl);
+            this.Controls.Add(this.panelDashboard);
             this.Controls.Add(this.panelReports);
             this.Controls.Add(this.panelSaving);
             this.Controls.Add(this.panelAccounting);
             this.Controls.Add(this.panelInvestment);
-            this.Controls.Add(this.panelDashboard);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
